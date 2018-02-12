@@ -21,6 +21,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "personal", "dev", "product"
+    productFlavors {
+        personal {
+            dimension "personal"
+            buildConfigField "String", "API_BASE_URL", "http://22.11.154.85/gms-app/"
+        }
+        dev {
+            dimension "dev"
+            buildConfigField "String", "API_BASE_URL", "http://22.11.154.85/gms-app/"
+        }
+        product {
+            dimension "product"
+            buildConfigField "String", "API_BASE_URL", "http://22.11.154.85/gms-app/"
+        }
+    }
 }
 
 dependencies {

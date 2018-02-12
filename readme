@@ -1,0 +1,31 @@
+MVP + RxJava + Retrofit + DataBinding + OkHttp
+
+分包原则：按照功能分模块
+http: 封装相应的Retrofit请求
+utils: 工具类
+base:基础类
+glide：glide 封装类
+
+本App：
+1. build.gradle 配置
+   1> AS3.0 的productFlavors 配置需要 flavorDimensions, 详见官网
+     https://developer.android.com/studio/build/build-variants.html#flavor-dimensions
+   2> 版本统一管理 config.gradle
+2. 使用 OKHttp 网络框架，添加拦截器，再次封装 OKHttp 和 Retrofit
+    1> 添加 Header 的两种方式， 拦截器中 request.newBuilder().addHeader
+    2> 请求方法中添加：
+        @Headers("Cache-Control: max-age=120")
+        @GET("请求地址")
+        Observable<HttpResult> getInfo();
+        或者
+        @GET("请求地址")
+        Observable<HttpResult> getInfo(@Header("token") String token);
+3. 数据库
+4. RxJava 封装
+    使用 RxJava 的关键字充分使用他的异步操作， 了解 RxJava 的生命周期
+5. MD 新特性
+6. 自定义View 动画
+7. 事件分发机制
+8. 优化
+9. 生命周期管理
+10. 加密

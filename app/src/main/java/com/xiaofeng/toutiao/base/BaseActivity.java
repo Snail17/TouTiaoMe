@@ -31,4 +31,9 @@ public class BaseActivity extends RxAppCompatActivity implements ILoading{
     public void hideLoading() {
         LoadingUtils.hideDialog();
     }
+
+    @Override
+    public void showLoadingWithClose() {
+
+    }
 }

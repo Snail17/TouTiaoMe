@@ -4,6 +4,9 @@ import android.os.Bundle;
 
 import com.xiaofeng.toutiao.base.BaseActivity;
 
+import io.reactivex.Observable;
+import io.reactivex.functions.Action;
+
 public class MainActivity extends BaseActivity {
 
     @Override

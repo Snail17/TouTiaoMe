@@ -7,6 +7,8 @@ package com.xiaofeng.toutiao.base;
 public interface ILoading {
     void showLoading();
 
+    void showLoadingWithClose();
+
     void hideLoading();
 
 }

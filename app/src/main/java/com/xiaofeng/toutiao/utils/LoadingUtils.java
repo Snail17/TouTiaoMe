@@ -19,18 +19,29 @@ import com.xiaofeng.toutiao.R;
 
 public class LoadingUtils {
 
-    private static ImageView imClose;
     private static Dialog loadingDialog;
 
-    public static Dialog showLoading(Context context) {
+    public static Dialog showLoading(Context context, boolean isClose) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.item_loding_layout, null);
 
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.pb_loading_progress_bar);
         TextView loadingText = (TextView) view.findViewById(R.id.tv_loading_text);
+        ImageView loadingImage = (ImageView) view.findViewById(R.id.iv_loading_close_image);
 
         if (loadingDialog == null) {
             loadingDialog = new Dialog(context);
+        }
+
+        loadingImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hideDialog();
+            }
+        });
+
+        if (!isClose) {
+            loadingImage.setVisibility(View.GONE);
         }
 
         loadingDialog.setContentView(view);
@@ -55,6 +66,14 @@ public class LoadingUtils {
         if (loadingDialog != null) {
             loadingDialog.dismiss();
         }
+    }
+
+    public static void showLoadingWithClose(Context context) {
+        showLoading(context, true);
+    }
+
+    public static void showLoading(Context context) {
+        showLoading(context, false);
     }
 
 

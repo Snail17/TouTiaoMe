@@ -34,6 +34,6 @@ public class BaseActivity extends RxAppCompatActivity implements ILoading{
 
     @Override
     public void showLoadingWithClose() {
-
+        LoadingUtils.showLoadingWithClose(this);
     }
 }

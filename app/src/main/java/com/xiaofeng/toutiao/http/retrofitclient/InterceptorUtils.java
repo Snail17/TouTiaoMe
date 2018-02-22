@@ -23,7 +23,7 @@ public class InterceptorUtils {
     }
 
     public Request addHeader(Request request) {
-        Request.Builder builder = request.newBuilder().addHeader("Acc_lauguage", "CN");
+        Request.Builder builder = request.newBuilder().addHeader("Ac_lauguage", "CN");
         return builder.build();
     }
 }
